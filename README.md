@@ -21,16 +21,22 @@
 
 ## 开始的开始
 
-XXL-JOB 主分支只维护了基于 MySql 数据库的版本，出于性能以及公司需求考虑，对开源项目进行了修改，实现了对 PostgresSql 数据库的支持。
+XXL-JOB 主分支只维护了基于 MySql 数据库的版本，出于性能以及需求考虑，对开源项目进行了修改，实现了对 PostgresSql 数据库的支持。
 
 本项目提供了支持 PostgresSql 语法的数据库初始化脚本：` ./doc/db/tables_xxl_job_postgres.sql`， 本脚本为Navicat 导出，语法支持 PostgresSql 版本12，在此版本下已经经过测试，测试有效。
 
-本项目提供源代码以及已经构建完成的 docker 镜像：`./docker/xxl-job-admin-postgres.tar`，可以直接导入使用。
+本项目提供源代码以及已经构建完成的[ docker镜像](https://hub.docker.com/r/jasondennis12138/xxl-job-admin-postgressql) ，可以使用命令`docker pull jasondennis12138/xxl-job-admin-postgressql`直接拉取使用。
 
 环境变量（包括数据库连接参数）可以在docker启动的时候注入，启动命令样本如下：
 
 ```dockerfile
-sudo docker run -e PARAMS="--spring.datasource.url={{ jdbc_url }}/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai --spring.datasource.username={{ username }}  --spring.datasource.password={{ password }}" -p 18082:8080 -v /tmp:/data/applogs --name xxl-job-admin-postgres  -d xxl-job-admin-postgres:0.0.1
+sudo docker run -e PARAMS=" /
+--spring.datasource.url={{ jdbc_url }}/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai /
+--spring.datasource.username={{ username }}  /
+--spring.datasource.password={{ password }}" /
+-p 18082:8080 -v /tmp:/data/applogs /
+--name xxl-job-admin-postgres  /
+-d xxl-job-admin-postgres:0.0.1
 ```
 
 以上：
