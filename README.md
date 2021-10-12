@@ -48,8 +48,6 @@ Yifan
 ---
 
 楼下的就没啥好看的了
-	
-	https://gv.halberd.cn/_?theme=digital&active=3200ff&deactive=f1f1f1&len=8&speed=40&size=60&space=5&tail=1
 
 ## Introduction
 
