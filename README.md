@@ -36,7 +36,7 @@ sudo docker run -e PARAMS=" /
 --spring.datasource.password={{ password }}" /
 -p 18082:8080 -v /tmp:/data/applogs /
 --name xxl-job-admin-postgres  /
--d xxl-job-admin-postgres:0.0.1
+-d xxl-job-admin-postgres:latest
 ```
 
 以上：
